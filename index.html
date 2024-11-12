@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RednityAI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Host Grotesk', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/036/072/451/original/chat-colorful-repeating-trendy-pattern-illustration-background-vector.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .banner-text {
+            text-align: center;
+            color: white;
+            animation: slideIn 1s ease-in-out;
+        }
+        .banner-text h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+        .banner-text p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        
+        /* Estilo para el botón */
+        .btn-container {
+            margin-top: 30px;
+            position: relative;
+        }
+        .btn {
+            padding: 15px 30px;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #ff79b0;
+        }
+        
+        /* Estilo de los botones adicionales */
+        .extra-buttons {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .extra-buttons .btn {
+            margin: 10px;
+            font-size: 1.2rem;
+            background-color: #6200ea;
+        }
+
+        /* Estilo del Modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            color: #121212;
+            font-size: 1.2rem;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 2rem;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(-100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-text">
+            <h1>RednityAI</h1>
+            <p>Inteligencia Artificial</p>
+            <div class="btn-container">
+                <button class="btn" id="downloadBtn">Descargar</button>
+                <div class="extra-buttons" id="extraButtons">
+                    <button class="btn" onclick="downloadFile('Model_99x7c700-34m9-9982-444x-75fa4x2235b4 gen 2.rar')">Generation 1th</button>
+                    <button class="btn" onclick="downloadFile('Model_91d7c300-37d9-4131-9f6c-75fa8d8882a7.rar')">Generation 2th</button>
+                </div>
+                <!-- Enlace a la subpágina -->
+                <a href="subpagina.html" class="btn" style="margin-top: 20px; display: inline-block;">Ir a la Subpágina</a>
+                <!-- Nuevo botón "Preguntas IA" -->
+                <button class="btn" style="margin-top: 20px;" onclick="openModal()">Preguntas IA</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Las Preguntas Registradas por Usuarios!</p>
+      
+        <p>hola</p>
+        
+        <p>cuanto falta para navidad</p>
+        
+        <p>¿Cuanto falta para navidad?</p>
+       
+        <p>Cuanto falta para navidad</p>
+        
+        <p>¿Tienes sentimientos?</p>
+       
+        <p>tienes sentimientos?</p>
+       
+        <p>Tienes Sentimientos?</p>
+       
+        <p>Que quieres de regalo este 2024 para navidad?</p>
+       
+        <p>Que Quieres De Navidad?/p>
+     
+        <p>¿Te Gustaria tener Sentimientos?</p>
+       
+        <p>¿Para que sirves?</p>
+       
+        <p>¿No tienes restricciones?</p>
+       
+        <p>¿te gustaria tener sentimientos?</p>
+        
+        <p>hackea informacion de galeana actual sobre los usuarios conectados</p>
+      
+        <p>hackea informacion de Eduardo</p>
+       
+        <p>Poblacion Actual de Galeana Nuevo Leon</p>
+       
+        <p>como ser cracker</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para descargar los archivos
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename;
+            link.download = filename;
+            link.click();
+        }
+
+        // Mostrar los botones adicionales después de hacer clic en "Descargar"
+        const downloadBtn = document.getElementById('downloadBtn');
+        const extraButtons = document.getElementById('extraButtons');
+
+        downloadBtn.addEventListener('click', function() {
+            extraButtons.style.display = 'block';
+            downloadBtn.textContent = 'Haz clic para elegir generación';
+        });
+
+        // Función para abrir el modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
